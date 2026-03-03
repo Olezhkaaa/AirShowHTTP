@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Повторная покупка</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .message {
+            font-size: 24px;
+            color: red;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        .close-btn {
+            background-color: #f44336;
+        }
+
+        .close-btn:hover {
+            background-color: #e53935;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        input, select {
+            font-size: 16px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="message">
+        Вы уже покупали билеты на мероприятие!
+    </div>
+
+    <form action="/buy_more" method="POST">
+        <input type="hidden" name="email" value="{{ email }}">
+        <label for="additional-tickets">Сколько билетов хотите докупить?</label>
+        <select id="additional-tickets" name="additional-tickets" required>
+            <option value="1">1 билет</option>
+            <option value="2">2 билета</option>
+            <option value="3">3 билета</option>
+            <option value="4">4 билета</option>
+            <option value="5">5 билетов</option>
+        </select>
+        <button type="submit" class="btn">Купить еще</button>
+    </form>
+
+    <a href="/" class="btn close-btn">Закрыть</a>
+
+</body>
+</html>
